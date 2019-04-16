@@ -42,8 +42,27 @@ class DahlBookManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(author='Roald Dahl')
 
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     objects = models.Manager()
     dahl_objects = DahlBookManager()
+
+
+class AuthorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role='A')
+
+class EditorManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(role='B')
+
+
+class APersonA(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    role = models.CharField(max_length=1, choices=(('A', 'Author'), ('E', 'Editor')), default='A')
+    people = models.Manager()
+    authors = AuthorManager()
+    editors = EditorManager()

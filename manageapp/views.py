@@ -2,7 +2,7 @@ from django.db import connection
 from django.http import HttpResponse
 
 # Create your views here.
-from manageapp.models import Person, OpinionPoll, Response, Book
+from manageapp.models import Person, OpinionPoll, Response, Book, APersonA
 
 
 def index(request):
@@ -11,7 +11,11 @@ def index(request):
     # print(OpinionPoll.objects.with_counts())
     # print(Response.objects.filter(response__contains='asdddd'))
     # print(Response.objects.filter(person_name='personName0'))
-    print(Book.objects.all())
-    print(Book.dahl_objects.all())
+    # print(Book.objects.all())
+    # print(Book.dahl_objects.all())
+    print(APersonA.people.all())
+    print(APersonA.authors.all())
+    print(APersonA.editors.all())
+
     print(connection.queries)
     return HttpResponse('abc')
