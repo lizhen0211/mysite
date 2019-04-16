@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'testmodels',
     'weblog',
     'aggregation',
+    'search',
+    'manageapp'
 ]
 
 MIDDLEWARE = [

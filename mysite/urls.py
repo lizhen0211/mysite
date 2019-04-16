@@ -21,5 +21,7 @@ from polls.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')),
-    path('aggregation/', include('aggregation.urls'))
+    path('aggregation/', include('aggregation.urls')),
+    path('search/', include('search.urls')),
+    path('manageapp/', include('manageapp.urls'))
 ]
