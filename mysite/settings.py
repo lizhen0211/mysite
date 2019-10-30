@@ -76,6 +76,35 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+CACHES = {
+    'default': {
+        'BACKEND': 'djpymemcache.backend.PyMemcacheCache',
+        'LOCATION': [
+            '127.0.0.1:11211',
+        ],
+        'OPTIONS': {
+            'MAX_POOL_SIZE': 100,
+            'KEY_PREFIX': b'mysite',
+            'TIMEOUT': 30,
+            'CONNECT_TIMEOUT': 30,
+            'USE_POOLING': True,
+        }
+    },
+}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
+#         'OPTIONS': {
+#             'MAX_POOL_SIZE': 100,
+#             'KEY_PREFIX': b'mysite',
+#             'TIMEOUT': 30,
+#             'CONNECT_TIMEOUT': 30,
+#             'USE_POOLING': True,
+#         }
+#     }
+# }
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
