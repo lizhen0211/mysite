@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 CACHES = {
     'default': {
-        'BACKEND': 'djpymemcache.backend.PyMemcacheCache',
+        'BACKEND': 'djmemcache.backend.PyMemcacheCache',
         'LOCATION': [
             '127.0.0.1:11211',
         ],
