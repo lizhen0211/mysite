@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 from manageapp.models import Person, OpinionPoll, Response, Book, APersonA
-
+from django.contrib.auth.models import User
 
 def index(request):
     # print(Person.people.all())
@@ -18,4 +18,6 @@ def index(request):
     print(APersonA.editors.all())
 
     print(connection.queries)
+
+    print(User.objects.all())
     return HttpResponse('abc')

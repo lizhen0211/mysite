@@ -23,5 +23,6 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('aggregation/', include('aggregation.urls')),
     path('search/', include('search.urls')),
-    path('manageapp/', include('manageapp.urls'))
+    path('manageapp/', include('manageapp.urls')),
+    path('user/', include('user.urls')),
 ]

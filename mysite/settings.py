@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'weblog',
     'aggregation',
     'search',
-    'manageapp'
+    'manageapp',
+    'user'
 ]
 
 MIDDLEWARE = [
